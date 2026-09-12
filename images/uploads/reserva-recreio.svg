@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Fachada placeholder Reserva do Recreio">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0A10"/>
+      <stop offset="100%" stop-color="#5C1224"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect x="180" y="160" width="280" height="520" fill="#2A1218"/>
+  <rect x="490" y="80" width="320" height="600" fill="#3D1520"/>
+  <rect x="840" y="200" width="240" height="480" fill="#2A1218"/>
+  <g fill="#8B1E3A" opacity="0.85">
+    <rect x="210" y="200" width="40" height="28"/>
+    <rect x="270" y="200" width="40" height="28"/>
+    <rect x="330" y="200" width="40" height="28"/>
+    <rect x="210" y="260" width="40" height="28"/>
+    <rect x="270" y="260" width="40" height="28"/>
+    <rect x="330" y="260" width="40" height="28"/>
+    <rect x="210" y="320" width="40" height="28"/>
+    <rect x="270" y="320" width="40" height="28"/>
+    <rect x="330" y="320" width="40" height="28"/>
+    <rect x="530" y="130" width="48" height="32"/>
+    <rect x="600" y="130" width="48" height="32"/>
+    <rect x="670" y="130" width="48" height="32"/>
+    <rect x="530" y="200" width="48" height="32"/>
+    <rect x="600" y="200" width="48" height="32"/>
+    <rect x="670" y="200" width="48" height="32"/>
+    <rect x="530" y="270" width="48" height="32"/>
+    <rect x="600" y="270" width="48" height="32"/>
+    <rect x="670" y="270" width="48" height="32"/>
+    <rect x="870" y="240" width="36" height="24"/>
+    <rect x="930" y="240" width="36" height="24"/>
+    <rect x="990" y="240" width="36" height="24"/>
+    <rect x="870" y="300" width="36" height="24"/>
+    <rect x="930" y="300" width="36" height="24"/>
+    <rect x="990" y="300" width="36" height="24"/>
+  </g>
+  <rect x="0" y="680" width="1200" height="120" fill="#0A0A0A"/>
+</svg>

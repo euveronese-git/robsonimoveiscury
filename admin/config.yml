@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+locale: pt
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: properties
+    label: Imóveis
+    label_singular: Imóvel
+    folder: content/properties
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: json
+    format: json
+    identifier_field: titulo
+    summary: "{{titulo}} — {{tipo}}"
+    fields:
+      - { label: Título do empreendimento, name: titulo, widget: string }
+      - label: Tipo
+        name: tipo
+        widget: select
+        options:
+          - Lançamento
+          - Pronta Entrega
+      - { label: Bairro, name: bairro, widget: string }
+      - { label: Endereço, name: endereco, widget: string }
+      - { label: Metragem, name: metragem, widget: string, hint: "Ex: 42 a 67 m²" }
+      - { label: Quartos, name: quartos, widget: string, hint: "Ex: 2 e 3" }
+      - { label: Vagas, name: vagas, widget: string, hint: "Ex: 1" }
+      - { label: Faixa de preço, name: faixa_preco, widget: string, hint: "Ex: A partir de R$ 280 mil" }
+      - { label: Descrição curta, name: descricao, widget: text }
+      - label: Fotos
+        name: fotos
+        widget: list
+        allow_add: true
+        min: 1
+        field: { label: Foto, name: image, widget: image }
+      - { label: Destaque, name: destaque, widget: boolean, default: false, hint: "Aparece primeiro no grid" }

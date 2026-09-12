@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Fachada placeholder Living Jacarepaguá">
+  <rect width="1200" height="800" fill="#1C0C12"/>
+  <rect x="220" y="60" width="760" height="680" fill="#4A1020"/>
+  <rect x="260" y="100" width="680" height="520" fill="#2A1218"/>
+  <g fill="#8B1E3A">
+    <rect x="300" y="140" width="80" height="54"/>
+    <rect x="420" y="140" width="80" height="54"/>
+    <rect x="540" y="140" width="80" height="54"/>
+    <rect x="660" y="140" width="80" height="54"/>
+    <rect x="780" y="140" width="80" height="54"/>
+    <rect x="300" y="230" width="80" height="54"/>
+    <rect x="420" y="230" width="80" height="54"/>
+    <rect x="540" y="230" width="80" height="54"/>
+    <rect x="660" y="230" width="80" height="54"/>
+    <rect x="780" y="230" width="80" height="54"/>
+    <rect x="300" y="320" width="80" height="54"/>
+    <rect x="420" y="320" width="80" height="54"/>
+    <rect x="540" y="320" width="80" height="54"/>
+    <rect x="660" y="320" width="80" height="54"/>
+    <rect x="780" y="320" width="80" height="54"/>
+    <rect x="300" y="410" width="80" height="54"/>
+    <rect x="420" y="410" width="80" height="54"/>
+    <rect x="540" y="410" width="80" height="54"/>
+    <rect x="660" y="410" width="80" height="54"/>
+    <rect x="780" y="410" width="80" height="54"/>
+  </g>
+  <rect x="520" y="500" width="160" height="120" fill="#0A0A0A"/>
+</svg>

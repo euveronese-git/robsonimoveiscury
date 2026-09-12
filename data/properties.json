@@ -1,0 +1,70 @@
+[
+  {
+    "titulo": "Cury Porto Maravilha — Studio",
+    "tipo": "Lançamento",
+    "bairro": "Porto Maravilha",
+    "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+    "metragem": "28 a 32 m²",
+    "quartos": "Studio",
+    "vagas": "0 ou 1",
+    "faixa_preco": "Consulte valores",
+    "descricao": "Studio compacto no Cury Porto Maravilha, no Centro do Rio. Ideal para morar perto do trabalho ou investir na região portuária.",
+    "fotos": [
+      "/images/uploads/reserva-recreio.png",
+      "/images/uploads/interior.png"
+    ],
+    "destaque": true,
+    "slug": "porto-maravilha-studio"
+  },
+  {
+    "titulo": "Cury Porto Maravilha — 1 quarto",
+    "tipo": "Lançamento",
+    "bairro": "Porto Maravilha",
+    "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+    "metragem": "32 a 39 m²",
+    "quartos": "1",
+    "vagas": "1",
+    "faixa_preco": "Consulte valores",
+    "descricao": "Planta de 1 quarto no Cury Porto Maravilha, com lazer do condomínio e fácil acesso ao VLT e ao Centro.",
+    "fotos": [
+      "/images/uploads/palco-campo-grande.png",
+      "/images/uploads/interior.png"
+    ],
+    "destaque": false,
+    "slug": "porto-maravilha-1-quarto"
+  },
+  {
+    "titulo": "Cury Porto Maravilha — 2 quartos",
+    "tipo": "Pronta Entrega",
+    "bairro": "Porto Maravilha",
+    "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+    "metragem": "42 a 50 m²",
+    "quartos": "2",
+    "vagas": "1",
+    "faixa_preco": "Consulte valores",
+    "descricao": "Dois quartos prontos para morar no Cury Porto Maravilha. Centro do Rio, com lazer completo e entrega imediata.",
+    "fotos": [
+      "/images/uploads/living-jacarepagua.png",
+      "/images/uploads/interior.png"
+    ],
+    "destaque": false,
+    "slug": "porto-maravilha-2-quartos"
+  },
+  {
+    "titulo": "Cury Porto Maravilha — 3 quartos",
+    "tipo": "Pronta Entrega",
+    "bairro": "Porto Maravilha",
+    "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+    "metragem": "55 a 70 m²",
+    "quartos": "3",
+    "vagas": "1",
+    "faixa_preco": "Consulte valores",
+    "descricao": "Três quartos no Cury Porto Maravilha, para quem quer mais espaço no Centro do Rio, com planta familiar e lazer do condomínio.",
+    "fotos": [
+      "/images/uploads/parque-bangu.png",
+      "/images/uploads/interior.png"
+    ],
+    "destaque": false,
+    "slug": "porto-maravilha-3-quartos"
+  }
+]

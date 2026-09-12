@@ -1,0 +1,16 @@
+{
+  "titulo": "Cury Porto Maravilha — Studio",
+  "tipo": "Lançamento",
+  "bairro": "Porto Maravilha",
+  "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+  "metragem": "28 a 32 m²",
+  "quartos": "Studio",
+  "vagas": "0 ou 1",
+  "faixa_preco": "Consulte valores",
+  "descricao": "Studio compacto no Cury Porto Maravilha, no Centro do Rio. Ideal para morar perto do trabalho ou investir na região portuária.",
+  "fotos": [
+    "/images/uploads/reserva-recreio.png",
+    "/images/uploads/interior.png"
+  ],
+  "destaque": true
+}

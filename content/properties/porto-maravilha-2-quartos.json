@@ -1,0 +1,16 @@
+{
+  "titulo": "Cury Porto Maravilha — 2 quartos",
+  "tipo": "Pronta Entrega",
+  "bairro": "Porto Maravilha",
+  "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+  "metragem": "42 a 50 m²",
+  "quartos": "2",
+  "vagas": "1",
+  "faixa_preco": "Consulte valores",
+  "descricao": "Dois quartos prontos para morar no Cury Porto Maravilha. Centro do Rio, com lazer completo e entrega imediata.",
+  "fotos": [
+    "/images/uploads/living-jacarepagua.png",
+    "/images/uploads/interior.png"
+  ],
+  "destaque": false
+}
