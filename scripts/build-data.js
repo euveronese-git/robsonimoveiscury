@@ -39,6 +39,26 @@ function loadProperties() {
     });
 }
 
+const SITE_SOURCE = path.join(__dirname, "..", "content", "site.json");
+const SITE_OUTPUT = path.join(OUTPUT_DIR, "site.json");
+
+function loadSite() {
+  const fallback = { foto: "/images/robson.png" };
+  if (!fs.existsSync(SITE_SOURCE)) return fallback;
+  try {
+    const data = JSON.parse(fs.readFileSync(SITE_SOURCE, "utf8"));
+    if (data && typeof data.foto === "object") {
+      data.foto = data.foto.image || data.foto.src || data.foto.url || fallback.foto;
+    }
+    if (!data.foto) data.foto = fallback.foto;
+    return data;
+  } catch {
+    return fallback;
+  }
+}
+
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 fs.writeFileSync(OUTPUT, JSON.stringify(loadProperties(), null, 2) + "\n");
+fs.writeFileSync(SITE_OUTPUT, JSON.stringify(loadSite(), null, 2) + "\n");
 console.log(`Wrote ${OUTPUT}`);
+console.log(`Wrote ${SITE_OUTPUT}`);

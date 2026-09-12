@@ -215,6 +215,13 @@
   const aboutPhoto = document.querySelector(".about-photo");
   if (aboutPhoto && SITE.photo) aboutPhoto.src = SITE.photo;
 
+  fetch("data/site.json")
+    .then((response) => (response.ok ? response.json() : null))
+    .then((site) => {
+      if (aboutPhoto && site && site.foto) aboutPhoto.src = site.foto;
+    })
+    .catch(() => {});
+
   chips.forEach((chip) => chip.addEventListener("click", () => setFilter(chip.dataset.filter)));
 
   document.addEventListener("click", (event) => {

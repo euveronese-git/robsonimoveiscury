@@ -42,3 +42,17 @@ collections:
         min: 1
         field: { label: Foto, name: image, widget: image }
       - { label: Destaque, name: destaque, widget: boolean, default: false, hint: "Aparece primeiro no grid" }
+
+  - name: site
+    label: Site
+    files:
+      - file: content/site.json
+        name: sobre
+        label: Foto do consultor
+        fields:
+          - {
+              label: Foto do Robson,
+              name: foto,
+              widget: image,
+              hint: "Aparece na seção Sobre. Envie uma foto nova para trocar.",
+            }
