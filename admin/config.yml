@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: euveronese-git/robsonimoveiscury
   branch: main
 
 local_backend: true
