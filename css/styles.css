@@ -602,6 +602,7 @@ textarea {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -611,6 +612,20 @@ textarea {
 
 .footer-links a:hover {
   color: var(--white);
+}
+
+.footer-admin {
+  min-height: 34px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-admin:hover {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .fab-whatsapp {
