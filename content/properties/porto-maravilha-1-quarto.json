@@ -1,15 +1,23 @@
 {
   "destaque": false,
-  "quartos": "1",
-  "metragem": "32 a 39 m²",
+  "quartos": "STÚDIO, DOUBLE STÚDIO, 1 E 3 QUARTOS",
+  "metragem": "35 a 72 m²",
   "bairro": "Porto Maravilha",
   "faixa_preco": "Consulte valores",
-  "descricao": "Planta de 1 quarto no Cury Porto Maravilha, com lazer do condomínio e fácil acesso ao VLT e ao Centro.",
+  "descricao": "ESTRANGEIROS E BRASILEIROS QUE MORAM NO EXTERIOR: o Rio de Janeiro pode ser o endereço do seu próximo patrimônio.\n\n O \"Erê Residencial\", uma oportunidade para quem busca unir investimento, localização privilegiada, sofisticação e potencial de valorização em uma das cidades mais desejadas do mundo.\n\nSeja para investir, gerar renda com locação, ter um imóvel para suas temporadas no Brasil ou construir patrimônio em Real (R$), o Erê chega com uma proposta diferenciada.\n\nSTUDIOS | 1 QUARTO | DOUBLE SUÍTE | 3 QUARTOS\n\nUm empreendimento pensado para quem enxerga além:\n* Sofisticação à beira-mar\n* Potencial para locação tradicional ou por temporada\n* Localização estratégica\n* Lazer e segurança\n* Opções para diferentes perfis de investimento\n\nVocê mora fora do Brasil? Eu posso te orientar durante o processo de compra e apresentar as condições do empreendimento.\n\nO Rio é encanto, lazer e cultura. E também pode ser patrimônio.\n\nRobson Martins\nCRECI RJ 84671\nWhatsApp (21) 96677-8530\n\nMe chame agora e saiba como investir no Rio de Janeiro.",
   "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
   "vagas": "1",
   "fotos": [
-    "/images/uploads/fachada-ere.png"
+    "/images/uploads/fachada-ere.png",
+    "/images/uploads/fachada-c-pessoas.png",
+    "/images/uploads/produto.png",
+    "/images/uploads/varanda.png",
+    "/images/uploads/piscina.png",
+    "/images/uploads/vista-mar.png",
+    "/images/uploads/fachada2.png",
+    "/images/uploads/fachada-com-pessoas-2.png",
+    "/images/uploads/fachada-c-pessoas.png"
   ],
   "tipo": "Lançamento",
-  "titulo": "Cury Porto Maravilha — 1 quarto"
+  "titulo": "Cury Porto Maravilha — RESIDENCIAL ERÊ"
 }
