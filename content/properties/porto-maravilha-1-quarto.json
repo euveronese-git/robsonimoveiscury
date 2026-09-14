@@ -1,16 +1,17 @@
 {
-  "titulo": "Cury Porto Maravilha — 1 quarto",
-  "tipo": "Lançamento",
-  "bairro": "Porto Maravilha",
-  "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
-  "metragem": "32 a 39 m²",
+  "destaque": false,
   "quartos": "1",
-  "vagas": "1",
+  "metragem": "32 a 39 m²",
+  "bairro": "Porto Maravilha",
   "faixa_preco": "Consulte valores",
   "descricao": "Planta de 1 quarto no Cury Porto Maravilha, com lazer do condomínio e fácil acesso ao VLT e ao Centro.",
+  "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
+  "vagas": "1",
   "fotos": [
     "/images/uploads/palco-campo-grande.png",
-    "/images/uploads/interior.png"
+    "/images/uploads/interior.png",
+    "/images/uploads/134114262408829632.jpg"
   ],
-  "destaque": false
+  "tipo": "Lançamento",
+  "titulo": "Cury Porto Maravilha — 1 quarto"
 }
