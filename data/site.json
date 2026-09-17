@@ -1,3 +1,37 @@
 {
-  "foto": "/images/robson.png"
+  "foto": "/images/uploads/whatsapp-image-2026-09-12-at-09.34.00.jpeg",
+  "capa_hero": "/images/hero-rj.png",
+  "marca_sub": "Especialista Cury · Porto Maravilha",
+  "hero_eyebrow": "Cury Construtora · Rio de Janeiro",
+  "hero_titulo": "More com a Cury no Rio de Janeiro",
+  "hero_lead": "Especialista em lançamentos e pronta entrega da Cury Construtora de Imóveis, em várias regiões do Rio:",
+  "regioes": [
+    "Porto Maravilha",
+    "Centro do Rio",
+    "São Cristóvão",
+    "Niterói",
+    "Barra da Tijuca",
+    "Irajá",
+    "Piedade",
+    "Ramos"
+  ],
+  "hero_bullets": [
+    "Atendimento 100% pessoal com o Robson",
+    "Condições Cury + Minha Casa Minha Vida",
+    "Use seu FGTS na entrada",
+    "Entrada parcelada",
+    "Financiamento Caixa Econômica Federal",
+    "Financiamento direto com a construtora",
+    "Do contrato às chaves, com você"
+  ],
+  "featured_titulo": "Destaque no Porto Maravilha",
+  "featured_texto": "A planta em evidência deste Cury no Centro do Rio.",
+  "plantas_eyebrow": "Plantas Cury",
+  "plantas_titulo": "Escolha a sua planta",
+  "plantas_texto": "Lançamento e pronta entrega por bairro — filtre pela região.",
+  "sobre_titulo": "Robson Martins",
+  "sobre_texto": "Corretor especialista na Cury Construtora de Imóveis, em várias regiões do Rio.\nAtendimento direto e objetivo — do primeiro contato até as chaves.",
+  "contato_titulo": "Vamos falar do seu Cury",
+  "contato_texto": "Tire dúvidas, peça uma simulação ou agende visita. Atendimento pelo WhatsApp.",
+  "footer_linha": "Robson Martins · Cury no Rio de Janeiro"
 }

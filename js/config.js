@@ -8,6 +8,16 @@ const SITE = {
   instagramHandle: "@robsonimoveis",
   instagramUrl: "#",
   photo: "images/robson.png",
+  regioes: [
+    "Porto Maravilha",
+    "Centro do Rio",
+    "São Cristóvão",
+    "Niterói",
+    "Barra da Tijuca",
+    "Irajá",
+    "Piedade",
+    "Ramos",
+  ],
 };
 
 const MESSAGES = {

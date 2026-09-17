@@ -42,15 +42,36 @@ function loadProperties() {
 const SITE_SOURCE = path.join(__dirname, "..", "content", "site.json");
 const SITE_OUTPUT = path.join(OUTPUT_DIR, "site.json");
 
+function normalizeImage(value, fallback) {
+  if (!value) return fallback;
+  if (typeof value === "object") {
+    return value.image || value.src || value.url || fallback;
+  }
+  return String(value);
+}
+
+function normalizeList(items) {
+  if (!Array.isArray(items)) return [];
+  return items
+    .map((item) => {
+      if (typeof item === "string") return item.trim();
+      if (item && typeof item === "object") {
+        return String(item.item || item.nome || item.label || "").trim();
+      }
+      return "";
+    })
+    .filter(Boolean);
+}
+
 function loadSite() {
-  const fallback = { foto: "/images/robson.png" };
+  const fallback = { foto: "/images/robson.png", capa_hero: "/images/hero-rj.png" };
   if (!fs.existsSync(SITE_SOURCE)) return fallback;
   try {
     const data = JSON.parse(fs.readFileSync(SITE_SOURCE, "utf8"));
-    if (data && typeof data.foto === "object") {
-      data.foto = data.foto.image || data.foto.src || data.foto.url || fallback.foto;
-    }
-    if (!data.foto) data.foto = fallback.foto;
+    data.foto = normalizeImage(data.foto, fallback.foto);
+    data.capa_hero = normalizeImage(data.capa_hero, fallback.capa_hero);
+    data.regioes = normalizeList(data.regioes);
+    data.hero_bullets = normalizeList(data.hero_bullets);
     return data;
   } catch {
     return fallback;

@@ -4,6 +4,7 @@ backend:
   branch: main
 
 local_backend: true
+publish_mode: editorial_workflow
 locale: pt
 
 media_folder: images/uploads
@@ -16,12 +17,21 @@ collections:
     folder: content/properties
     create: true
     delete: true
-    slug: "{{slug}}"
+    slug: "{{titulo}}"
     extension: json
     format: json
     identifier_field: titulo
     summary: "{{titulo}} — {{tipo}}"
+    sortable_fields: ["destaque", "titulo", "tipo"]
     fields:
+      - {
+          label: Destaque,
+          name: destaque,
+          widget: boolean,
+          default: false,
+          required: false,
+          hint: "Marque para aparecer na seção Em destaque da home",
+        }
       - { label: Título do empreendimento, name: titulo, widget: string }
       - label: Tipo
         name: tipo
@@ -41,19 +51,49 @@ collections:
         widget: list
         allow_add: true
         min: 1
+        max: 50
+        hint: "A primeira foto é a capa do card no site. Até 50 fotos, JPG ou PNG com cerca de 1,5 MB cada."
         field: { label: Foto, name: image, widget: image }
-      - { label: Destaque, name: destaque, widget: boolean, default: false, hint: "Aparece primeiro no grid" }
 
   - name: site
     label: Site
     files:
       - file: content/site.json
         name: sobre
-        label: Foto do consultor
+        label: Textos e fotos da home
         fields:
+          - {
+              label: Foto de capa (hero),
+              name: capa_hero,
+              widget: image,
+              hint: "Imagem de fundo da primeira tela. Salve como rascunho; o site só muda depois da publicação.",
+            }
           - {
               label: Foto do Robson,
               name: foto,
               widget: image,
-              hint: "Aparece na seção Sobre. Envie uma foto nova para trocar.",
+              hint: "Aparece na seção Sobre.",
             }
+          - { label: Subtítulo da marca (topo), name: marca_sub, widget: string }
+          - { label: Linha acima do título (hero), name: hero_eyebrow, widget: string }
+          - { label: Título principal, name: hero_titulo, widget: string, hint: "Use Enter para quebrar a linha." }
+          - { label: Texto de introdução, name: hero_lead, widget: text }
+          - label: Regiões (hero e abas)
+            name: regioes
+            widget: list
+            hint: "Uma por linha. Também viram as abas em Escolha a sua planta."
+            field: { label: Região, name: item, widget: string }
+          - label: Lista de vantagens do hero
+            name: hero_bullets
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - { label: Título da seção destaque, name: featured_titulo, widget: string }
+          - { label: Texto da seção destaque, name: featured_texto, widget: text }
+          - { label: Linha acima das plantas, name: plantas_eyebrow, widget: string }
+          - { label: Título das plantas, name: plantas_titulo, widget: string }
+          - { label: Texto das plantas, name: plantas_texto, widget: text }
+          - { label: Nome na seção Sobre, name: sobre_titulo, widget: string }
+          - { label: Texto Sobre, name: sobre_texto, widget: text, hint: "Parágrafos separados por linha em branco." }
+          - { label: Título do contato, name: contato_titulo, widget: string }
+          - { label: Texto do contato, name: contato_texto, widget: text }
+          - { label: Linha do rodapé, name: footer_linha, widget: string }

@@ -3,7 +3,7 @@
   const featuredGrid = document.getElementById("featured-grid");
   const featuredSection = document.getElementById("destaques");
   const empty = document.getElementById("properties-empty");
-  const chips = document.querySelectorAll(".chip");
+  const chipsWrap = document.getElementById("property-chips");
   const modal = document.getElementById("property-modal");
   const modalImage = document.getElementById("modal-image");
   const modalTipo = document.getElementById("modal-tipo");
@@ -85,7 +85,106 @@
 
   function filteredList() {
     if (currentFilter === "todos") return properties;
-    return properties.filter((item) => item.tipo === currentFilter);
+    return properties.filter((item) => item.bairro === currentFilter);
+  }
+
+  function bairrosFromProperties() {
+    const seen = new Set();
+    const list = [];
+    properties.forEach((item) => {
+      const name = String(item.bairro || "").trim();
+      if (!name || seen.has(name)) return;
+      seen.add(name);
+      list.push(name);
+    });
+    return list.sort((a, b) => a.localeCompare(b, "pt-BR"));
+  }
+
+  function setSiteText(key, value, asHtml) {
+    const el = document.querySelector(`[data-site="${key}"]`);
+    if (!el || value == null || String(value).trim() === "") return;
+    const raw = String(value).trim();
+    if (asHtml) {
+      const parts = raw.split(/\n+/).filter(Boolean);
+      el.innerHTML = parts.map((part) => `<p>${escapeHtml(part)}</p>`).join("");
+      return;
+    }
+    el.innerHTML = escapeHtml(raw).replace(/\n/g, "<br />");
+  }
+
+  function applySite(site) {
+    if (!site) return;
+    if (site.foto && aboutPhoto) aboutPhoto.src = site.foto;
+    if (site.capa_hero) {
+      const hero = document.querySelector(".hero");
+      if (hero) {
+        const path = String(site.capa_hero).replace(/\\/g, "/");
+        hero.style.setProperty("--hero-image", `url("${path}")`);
+      }
+    }
+    setSiteText("marca_sub", site.marca_sub);
+    setSiteText("hero_eyebrow", site.hero_eyebrow);
+    setSiteText("hero_titulo", site.hero_titulo);
+    setSiteText("hero_lead", site.hero_lead);
+    setSiteText("featured_titulo", site.featured_titulo);
+    setSiteText("featured_texto", site.featured_texto);
+    setSiteText("plantas_eyebrow", site.plantas_eyebrow);
+    setSiteText("plantas_titulo", site.plantas_titulo);
+    setSiteText("plantas_texto", site.plantas_texto);
+    setSiteText("sobre_titulo", site.sobre_titulo);
+    setSiteText("sobre_texto", site.sobre_texto, true);
+    setSiteText("contato_titulo", site.contato_titulo);
+    setSiteText("contato_texto", site.contato_texto);
+    setSiteText("footer_linha", site.footer_linha);
+
+    const bullets = Array.isArray(site.hero_bullets)
+      ? site.hero_bullets
+          .map((item) => (typeof item === "string" ? item : item && item.item))
+          .filter(Boolean)
+      : [];
+    const bulletsEl = document.querySelector(".hero-bullets");
+    if (bulletsEl && bullets.length) {
+      bulletsEl.innerHTML = bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    const regioes = Array.isArray(site.regioes)
+      ? site.regioes
+          .map((item) => (typeof item === "string" ? item : item && (item.item || item.nome)))
+          .map((item) => String(item || "").trim())
+          .filter(Boolean)
+      : [];
+    if (regioes.length) SITE.regioes = regioes;
+    renderHeroRegions();
+    renderBairroTabs();
+  }
+
+  function regionList() {
+    return Array.isArray(SITE.regioes) && SITE.regioes.length
+      ? SITE.regioes
+      : bairrosFromProperties();
+  }
+
+  function renderHeroRegions() {
+    const list = document.querySelector(".hero-regions");
+    if (!list) return;
+    list.innerHTML = regionList()
+      .map((name) => `<li>${escapeHtml(name)}</li>`)
+      .join("");
+  }
+
+  function renderBairroTabs() {
+    if (!chipsWrap) return;
+    const bairros = regionList();
+    const tabs = [{ label: "Todos", value: "todos" }].concat(
+      bairros.map((name) => ({ label: name, value: name }))
+    );
+    if (!tabs.some((tab) => tab.value === currentFilter)) currentFilter = "todos";
+    chipsWrap.innerHTML = tabs
+      .map((tab) => {
+        const active = tab.value === currentFilter;
+        return `<button class="chip${active ? " is-active" : ""}" type="button" role="tab" aria-selected="${active}" data-filter="${escapeHtml(tab.value)}">${escapeHtml(tab.label)}</button>`;
+      })
+      .join("");
   }
 
   function renderGrid() {
@@ -161,7 +260,8 @@
 
   function setFilter(filter) {
     currentFilter = filter;
-    chips.forEach((chip) => {
+    if (!chipsWrap) return;
+    chipsWrap.querySelectorAll(".chip").forEach((chip) => {
       const active = chip.dataset.filter === filter;
       chip.classList.toggle("is-active", active);
       chip.setAttribute("aria-selected", String(active));
@@ -218,11 +318,15 @@
   fetch("data/site.json")
     .then((response) => (response.ok ? response.json() : null))
     .then((site) => {
-      if (aboutPhoto && site && site.foto) aboutPhoto.src = site.foto;
+      applySite(site);
     })
     .catch(() => {});
 
-  chips.forEach((chip) => chip.addEventListener("click", () => setFilter(chip.dataset.filter)));
+  chipsWrap.addEventListener("click", (event) => {
+    const chip = event.target.closest(".chip");
+    if (!chip || !chipsWrap.contains(chip)) return;
+    setFilter(chip.dataset.filter);
+  });
 
   document.addEventListener("click", (event) => {
     const trigger = event.target.closest("[data-open]");
@@ -286,6 +390,8 @@
       properties = Array.isArray(data) ? data : [];
       document.getElementById("stats-count").textContent = String(properties.length);
       fillPropertySelects();
+      renderHeroRegions();
+      renderBairroTabs();
       renderFeatured();
       renderGrid();
     })
@@ -293,4 +399,7 @@
       empty.hidden = false;
       empty.textContent = "Não foi possível carregar os imóveis.";
     });
+
+  renderHeroRegions();
+  renderBairroTabs();
 })();

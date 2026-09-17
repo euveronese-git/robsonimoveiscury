@@ -178,9 +178,10 @@ textarea {
 
 .hero {
   position: relative;
+  --hero-image: url("../images/hero-rj.png");
   background:
     linear-gradient(90deg, rgba(20, 14, 10, 0.82) 0%, rgba(20, 14, 10, 0.45) 55%, rgba(20, 14, 10, 0.3) 100%),
-    url("../images/hero-rj.png") center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
   color: var(--white);
   padding: 3.5rem 1.25rem 4rem;
 }
@@ -221,9 +222,35 @@ textarea {
 }
 
 .hero-lead {
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.85rem;
   max-width: 34rem;
   color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-regions {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+  max-width: 34rem;
+}
+
+.hero-regions li {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  line-height: 1.55;
+  padding: 0.12rem 0 0.12rem 1.3rem;
+}
+
+.hero-regions li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--orange);
 }
 
 .hero-bullets {
@@ -365,9 +392,12 @@ textarea {
 
 .chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   margin-bottom: 1.4rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
 }
 
 .chip {
@@ -379,6 +409,7 @@ textarea {
   font-weight: 700;
   font-size: 0.88rem;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .chip.is-active {
@@ -393,8 +424,20 @@ textarea {
   gap: 1.25rem;
 }
 
-#featured-grid {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+.card-row {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.65rem;
+  scrollbar-width: thin;
+}
+
+.card-row .card {
+  flex: 0 0 min(280px, 82vw);
+  max-width: 340px;
+  scroll-snap-align: start;
 }
 
 .card {
@@ -773,7 +816,6 @@ textarea {
     grid-template-columns: 1.1fr 0.9fr;
   }
 
-  .grid,
   .benefit-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -788,10 +830,6 @@ textarea {
 }
 
 @media (min-width: 1100px) {
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .benefit-grid,
   .step-list {
     grid-template-columns: repeat(3, 1fr);
@@ -847,6 +885,10 @@ textarea {
   }
 
   .hero-lead {
+    max-width: 22em;
+  }
+
+  .hero-regions {
     max-width: 22em;
   }
 

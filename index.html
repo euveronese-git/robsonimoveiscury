@@ -32,7 +32,7 @@
         <span class="brand-mark">RI</span>
         <span class="brand-text">
           <strong>Robson Imóveis</strong>
-          <small>Especialista Cury · Porto Maravilha</small>
+          <small data-site="marca_sub">Especialista Cury · Porto Maravilha</small>
         </span>
       </a>
       <nav class="nav" aria-label="Seções">
@@ -50,12 +50,21 @@
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">Cury Porto Maravilha · Centro do Rio</p>
-            <h1>More no Porto Maravilha<br />com a Cury</h1>
-            <p class="hero-lead">
-              Na Cury Construtora de Imóveis — Porto Maravilha, Centro do Rio, São Cristóvão,
-              Niterói, Barra da Tijuca, Irajá, Piedade e Ramos.
+            <p class="eyebrow" data-site="hero_eyebrow">Cury Construtora · Rio de Janeiro</p>
+            <h1 data-site="hero_titulo">More com a Cury<br />no Rio de Janeiro</h1>
+            <p class="hero-lead" data-site="hero_lead">
+              Especialista em lançamentos e pronta entrega da Cury Construtora de Imóveis, em várias regiões do Rio:
             </p>
+            <ul class="hero-regions">
+              <li>Porto Maravilha</li>
+              <li>Centro do Rio</li>
+              <li>São Cristóvão</li>
+              <li>Niterói</li>
+              <li>Barra da Tijuca</li>
+              <li>Irajá</li>
+              <li>Piedade</li>
+              <li>Ramos</li>
+            </ul>
             <ul class="hero-bullets">
               <li>Atendimento 100% pessoal com o Robson</li>
               <li>Condições Cury + Minha Casa Minha Vida</li>
@@ -135,25 +144,23 @@
       <section class="featured" id="destaques" hidden>
         <div class="section-head">
           <p class="eyebrow">Em destaque</p>
-          <h2>Destaque no Porto Maravilha</h2>
-          <p>A planta em evidência deste Cury no Centro do Rio.</p>
+          <h2 data-site="featured_titulo">Destaque no Porto Maravilha</h2>
+          <p data-site="featured_texto">A planta em evidência deste Cury no Centro do Rio.</p>
         </div>
-        <div class="grid" id="featured-grid"></div>
+        <div class="grid card-row" id="featured-grid"></div>
       </section>
 
       <section class="portfolio" id="imoveis">
         <div class="section-head">
-          <p class="eyebrow">Cury Porto Maravilha</p>
-          <h2>Escolha a sua planta</h2>
-          <p>Studio a 3 quartos no Porto Maravilha, Centro do Rio — lançamento e pronta entrega.</p>
+          <p class="eyebrow" data-site="plantas_eyebrow">Plantas Cury</p>
+          <h2 data-site="plantas_titulo">Escolha a sua planta</h2>
+          <p data-site="plantas_texto">Lançamento e pronta entrega por bairro — só aparecem as regiões com imóveis no site.</p>
         </div>
-        <div class="chips" role="tablist" aria-label="Filtrar imóveis">
+        <div class="chips" id="property-chips" role="tablist" aria-label="Filtrar por bairro">
           <button class="chip is-active" type="button" role="tab" aria-selected="true" data-filter="todos">Todos</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="Lançamento">Lançamentos</button>
-          <button class="chip" type="button" role="tab" aria-selected="false" data-filter="Pronta Entrega">Pronta Entrega</button>
         </div>
-        <div class="grid" id="properties-grid" aria-live="polite"></div>
-        <p class="empty" id="properties-empty" hidden>Nenhum imóvel nesta categoria no momento.</p>
+        <div class="grid card-row" id="properties-grid" aria-live="polite"></div>
+        <p class="empty" id="properties-empty" hidden>Nenhum imóvel neste bairro no momento.</p>
       </section>
 
       <section class="benefits" id="vantagens">
@@ -223,7 +230,8 @@
         <img class="about-photo" src="images/robson.png" alt="Robson Martins, consultor da Robson Imóveis" width="400" height="500" />
         <div class="about-copy">
           <p class="eyebrow">Seu consultor</p>
-          <h2>Robson Martins</h2>
+          <h2 data-site="sobre_titulo">Robson Martins</h2>
+          <div data-site="sobre_texto">
           <p>
             Corretor especialista na Cury Construtora de Imóveis, Porto Maravilha no Centro do Rio.
             Atendimento direto e objetivo — do primeiro contato até as chaves.
@@ -232,6 +240,7 @@
             Se você busca um apartamento nesse empreendimento para morar ou investir, eu te ajudo
             a escolher a planta e a melhor condição.
           </p>
+          </div>
           <a class="btn btn-primary" id="about-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
             Falar com o Robson
           </a>
@@ -249,8 +258,8 @@
       <section class="contact" id="contato">
         <div>
           <p class="eyebrow">Fale com o Robson</p>
-          <h2>Vamos falar do Porto Maravilha</h2>
-          <p>Tire dúvidas, peça uma simulação ou agende visita neste Cury do Centro. Atendimento pelo WhatsApp.</p>
+          <h2 data-site="contato_titulo">Vamos falar do Porto Maravilha</h2>
+          <p data-site="contato_texto">Tire dúvidas, peça uma simulação ou agende visita neste Cury do Centro. Atendimento pelo WhatsApp.</p>
           <p><strong>WhatsApp</strong><br /><span id="contact-phone-display">(21) 96677-8530</span></p>
           <p><strong>Horário</strong><br />Seg a sáb: 8h às 18h</p>
         </div>
@@ -298,7 +307,7 @@
     <footer class="footer">
       <div>
         <strong>Robson Imóveis</strong>
-        <span>Robson Martins · Cury Porto Maravilha · Centro do Rio</span>
+        <span data-site="footer_linha">Robson Martins · Cury Porto Maravilha · Centro do Rio</span>
       </div>
       <div class="footer-links">
         <a href="#imoveis">Plantas</a>
