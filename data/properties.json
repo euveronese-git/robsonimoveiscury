@@ -38,7 +38,6 @@
     "endereco": "Santo Cristo, Centro, Rio de Janeiro - RJ",
     "vagas": "1",
     "fotos": [
-      "/images/uploads/espaço-beleza.png",
       "/images/uploads/fachada.png",
       "/images/uploads/piscina.png",
       "/images/uploads/portaria.png",
@@ -59,10 +58,40 @@
       "/images/uploads/delivery.png",
       "/images/uploads/churrasqueira.png",
       "/images/uploads/churrasqueira.png",
-      "/images/uploads/briquedoteca-baby.png"
+      "/images/uploads/briquedoteca-baby.png",
+      "/images/uploads/whatsapp-image-2026-09-18-at-11.49.14.jpeg"
     ],
     "tipo": "Lançamento",
     "titulo": "Cury Porto Maravilha — PIXINGUINHA CARINHOSO",
     "slug": "porto-maravilha-2-quartos"
+  },
+  {
+    "destaque": false,
+    "quartos": "3 Quartos com suíte, varanda e vista mar",
+    "metragem": "de 68 a 80M²",
+    "bairro": "Porto Maravilha",
+    "faixa_preco": "A partir de R$ 878 Mil",
+    "descricao": "O Farol da Guanabara chega em uma das regiões mais estratégicas do Rio, cercado por mobilidade, turismo, novos projetos e uma transformação urbana que segue avançando.\n\nUm empreendimento moderno, com estrutura completa e diferenciais que aumentam o desejo de morar e também o potencial de interesse para quem pensa em investimento.\n",
+    "endereco": "VIA BINÁRIO DO PORTO - RIO DE JANEIRO",
+    "vagas": "1",
+    "fotos": [
+      "/images/uploads/fachada-bruta.png",
+      "/images/uploads/visão-farol-guanabara.png",
+      "/images/uploads/espaço-goumert.png",
+      "/images/uploads/piscina-farol-guanabara.png",
+      "/images/uploads/piscina-farol-guanabara.png",
+      "/images/uploads/salão-de-festas.png",
+      "/images/uploads/academia.png",
+      "/images/uploads/academia-interna.png",
+      "/images/uploads/apoio-salão-de-festas.png",
+      "/images/uploads/bicicletário.png",
+      "/images/uploads/mercadinho.png",
+      "/images/uploads/lavanderia.png",
+      "/images/uploads/pet-place.png",
+      "/images/uploads/playgroud.png"
+    ],
+    "tipo": "Lançamento",
+    "titulo": "FAROL GUANABARA - PORTO MARAVILHA - VISTA MAR",
+    "slug": "farol-guanabara-porto-maravilha-vista-mar"
   }
 ]

@@ -5,6 +5,22 @@ const SOURCE = path.join(__dirname, "..", "content", "properties");
 const OUTPUT_DIR = path.join(__dirname, "..", "data");
 const OUTPUT = path.join(OUTPUT_DIR, "properties.json");
 
+function foldName(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function canonicalBairro(value, regioes) {
+  const raw = String(value || "").trim();
+  if (!raw) return raw;
+  const folded = foldName(raw);
+  const match = (regioes || []).find((name) => foldName(name) === folded);
+  return match || raw;
+}
+
 function normalizeFotos(fotos) {
   if (!Array.isArray(fotos)) return [];
   return fotos
@@ -18,7 +34,7 @@ function normalizeFotos(fotos) {
     .filter(Boolean);
 }
 
-function loadProperties() {
+function loadProperties(regioes) {
   if (!fs.existsSync(SOURCE)) return [];
 
   return fs
@@ -28,6 +44,7 @@ function loadProperties() {
       const raw = fs.readFileSync(path.join(SOURCE, file), "utf8");
       const data = JSON.parse(raw);
       data.fotos = normalizeFotos(data.fotos);
+      data.bairro = canonicalBairro(data.bairro, regioes);
       data.slug = path.basename(file, ".json");
       return data;
     })
@@ -79,7 +96,8 @@ function loadSite() {
 }
 
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-fs.writeFileSync(OUTPUT, JSON.stringify(loadProperties(), null, 2) + "\n");
-fs.writeFileSync(SITE_OUTPUT, JSON.stringify(loadSite(), null, 2) + "\n");
+const site = loadSite();
+fs.writeFileSync(OUTPUT, JSON.stringify(loadProperties(site.regioes), null, 2) + "\n");
+fs.writeFileSync(SITE_OUTPUT, JSON.stringify(site, null, 2) + "\n");
 console.log(`Wrote ${OUTPUT}`);
 console.log(`Wrote ${SITE_OUTPUT}`);

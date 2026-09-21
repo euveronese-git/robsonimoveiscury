@@ -83,9 +83,18 @@
     `;
   }
 
+  function foldName(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+  }
+
   function filteredList() {
     if (currentFilter === "todos") return properties;
-    return properties.filter((item) => item.bairro === currentFilter);
+    const want = foldName(currentFilter);
+    return properties.filter((item) => foldName(item.bairro) === want);
   }
 
   function bairrosFromProperties() {
@@ -93,8 +102,9 @@
     const list = [];
     properties.forEach((item) => {
       const name = String(item.bairro || "").trim();
-      if (!name || seen.has(name)) return;
-      seen.add(name);
+      const key = foldName(name);
+      if (!name || seen.has(key)) return;
+      seen.add(key);
       list.push(name);
     });
     return list.sort((a, b) => a.localeCompare(b, "pt-BR"));
