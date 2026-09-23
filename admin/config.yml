@@ -39,7 +39,21 @@ collections:
         options:
           - Lançamento
           - Pronta Entrega
-      - { label: Bairro, name: bairro, widget: string }
+          - Planta
+        hint: "Lançamento, pronta entrega ou planta."
+      - label: Bairro
+        name: bairro
+        widget: select
+        options:
+          - Porto Maravilha
+          - Centro do Rio
+          - São Cristóvão
+          - Niterói
+          - Barra da Tijuca
+          - Irajá
+          - Piedade
+          - Ramos
+        hint: "Essa opção é a aba em Escolha a sua planta. Escolha a região do site."
       - { label: Endereço, name: endereco, widget: string }
       - { label: Metragem, name: metragem, widget: string, hint: "Ex: 42 a 67 m²" }
       - { label: Quartos, name: quartos, widget: string, hint: "Ex: 2 e 3" }

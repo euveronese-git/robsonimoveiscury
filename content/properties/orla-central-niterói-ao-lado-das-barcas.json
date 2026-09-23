@@ -2,7 +2,7 @@
   "destaque": false,
   "quartos": "1,2,3",
   "metragem": "33 a 66M²",
-  "bairro": "CENTRO - NITERÓI",
+  "bairro": "Niterói",
   "faixa_preco": "a partir de R$ 330 Mil",
   "descricao": "NITERÓI ESTÁ VIVENDO UM NOVO MOMENTO — E O ORLA CENTRAL FAZ PARTE DELE.\n\nMore ou invista em uma das regiões mais estratégicas da cidade, próximo às Barcas, ao Caminho Niemeyer e com fácil acesso ao Rio de Janeiro.\n\nO Orla Central reúne apartamentos de 1, 2 e 3 quartos com varanda, lazer completo e rooftop com uma vista especial para a Baía de Guanabara.",
   "endereco": "Rua Saldanha Marinho 90",
@@ -32,6 +32,6 @@
     "/images/uploads/voley.png",
     "/images/uploads/fachada-orla.png"
   ],
-  "tipo": "Lançamento",
+  "tipo": "Planta",
   "titulo": " ORLA CENTRAL NITERÓI * AO LADO DAS BARCAS *"
 }

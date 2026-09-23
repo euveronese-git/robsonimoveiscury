@@ -17,8 +17,11 @@ function canonicalBairro(value, regioes) {
   const raw = String(value || "").trim();
   if (!raw) return raw;
   const folded = foldName(raw);
-  const match = (regioes || []).find((name) => foldName(name) === folded);
-  return match || raw;
+  const list = regioes || [];
+  const exact = list.find((name) => foldName(name) === folded);
+  if (exact) return exact;
+  const contained = list.find((name) => folded.includes(foldName(name)));
+  return contained || raw;
 }
 
 function normalizeFotos(fotos) {

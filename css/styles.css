@@ -183,7 +183,7 @@ textarea {
     linear-gradient(90deg, rgba(20, 14, 10, 0.82) 0%, rgba(20, 14, 10, 0.45) 55%, rgba(20, 14, 10, 0.3) 100%),
     var(--hero-image) center / cover no-repeat;
   color: var(--white);
-  padding: 3.5rem 1.25rem 4rem;
+  padding: 3.5rem 1.25rem 2.25rem;
 }
 
 .hero-inner {
@@ -191,6 +191,7 @@ textarea {
   margin: 0 auto;
   display: grid;
   gap: 2rem;
+  align-items: start;
 }
 
 .hero-copy,
@@ -280,10 +281,11 @@ textarea {
   background: var(--white);
   color: var(--text);
   border-radius: var(--radius);
-  padding: 1.35rem 1.25rem 1.2rem;
+  padding: 1.1rem 1.15rem 0.85rem;
   box-shadow: var(--shadow);
   min-width: 0;
   max-width: 100%;
+  height: fit-content;
 }
 
 .lead-card h2 {
@@ -329,7 +331,7 @@ textarea {
 }
 
 .form-note {
-  margin: 0.75rem 0 0;
+  margin: 0.5rem 0 0;
   color: var(--muted);
   font-size: 0.78rem;
 }
@@ -881,7 +883,7 @@ textarea {
   }
 
   .hero {
-    padding: 2.4rem 1rem 3rem;
+    padding: 2.4rem 1rem 1.75rem;
   }
 
   .hero h1 {

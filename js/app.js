@@ -91,10 +91,15 @@
       .trim();
   }
 
+  function matchesRegion(bairro, region) {
+    const hay = foldName(bairro);
+    const needle = foldName(region);
+    return hay === needle || hay.includes(needle);
+  }
+
   function filteredList() {
     if (currentFilter === "todos") return properties;
-    const want = foldName(currentFilter);
-    return properties.filter((item) => foldName(item.bairro) === want);
+    return properties.filter((item) => matchesRegion(item.bairro, currentFilter));
   }
 
   function bairrosFromProperties() {
