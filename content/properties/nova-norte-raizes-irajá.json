@@ -1,0 +1,26 @@
+{
+  "destaque": false,
+  "quartos": "1,2,3",
+  "metragem": "33 a 66M²",
+  "bairro": "Irajá",
+  "faixa_preco": "A CONSULTAR",
+  "descricao": "NOVA NORTE RAÍZES — IRAJÁ\nSeu novo lar em uma localização estratégica do Rio! Um empreendimento pensado para quem busca conforto, praticidade e qualidade de vida, com fácil acesso a serviços, comércio e transporte.\n✨ Chegou a hora de dar o próximo passo!\n📲 Fale comigo agora e descubra as condições para conquistar seu imóvel no Nova Norte Raízes.",
+  "endereco": "ANIBAL PORTO 350",
+  "vagas": "1",
+  "fotos": [
+    "/images/uploads/nova-irajá-1080x1080-2.png",
+    "/images/uploads/faixada-1.png",
+    "/images/uploads/localização.png",
+    "/images/uploads/piscina-irajá.png",
+    "/images/uploads/churrascaria-2.png",
+    "/images/uploads/churrasqueira-.png",
+    "/images/uploads/academia.png",
+    "/images/uploads/academia.png",
+    "/images/uploads/jogos.png",
+    "/images/uploads/salão-de-festas.png",
+    "/images/uploads/pet.png",
+    "/images/uploads/plaigroud.png"
+  ],
+  "tipo": "Lançamento",
+  "titulo": "NOVA NORTE RAIZES - IRAJÁ"
+}
