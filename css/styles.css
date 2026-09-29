@@ -735,7 +735,8 @@ textarea {
   background: #111;
 }
 
-.modal-gallery img {
+.modal-gallery img,
+.modal-gallery video {
   display: block;
   width: auto;
   height: auto;
@@ -743,6 +744,10 @@ textarea {
   max-height: 70vh;
   object-fit: contain;
   margin: 0 auto;
+}
+
+.modal-gallery video {
+  background: #000;
 }
 
 .gallery-nav {

@@ -10,6 +10,12 @@ locale: pt
 media_folder: images/uploads
 public_folder: /images/uploads
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: naury
+    api_key: "823687155364381"
+
 collections:
   - name: properties
     label: Imóveis
@@ -68,6 +74,15 @@ collections:
         max: 50
         hint: "A primeira foto é a capa do card no site. Até 50 fotos, JPG ou PNG com cerca de 1,5 MB cada."
         field: { label: Foto, name: image, widget: image }
+      - label: Vídeo
+        name: video
+        widget: file
+        required: false
+        hint: "Abre a Cloudinary (faça login nela). O arquivo não vai para a Netlify. MP4 ou MOV."
+        media_library:
+          name: cloudinary
+          config:
+            multiple: false
 
   - name: site
     label: Site

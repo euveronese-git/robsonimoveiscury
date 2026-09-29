@@ -24,6 +24,14 @@ function canonicalBairro(value, regioes) {
   return contained || raw;
 }
 
+function normalizeVideo(value) {
+  if (!value) return "";
+  if (typeof value === "object") {
+    return String(value.url || value.secure_url || value.path || value.video || "").trim();
+  }
+  return String(value).trim();
+}
+
 function normalizeFotos(fotos) {
   if (!Array.isArray(fotos)) return [];
   return fotos
@@ -47,6 +55,7 @@ function loadProperties(regioes) {
       const raw = fs.readFileSync(path.join(SOURCE, file), "utf8");
       const data = JSON.parse(raw);
       data.fotos = normalizeFotos(data.fotos);
+      data.video = normalizeVideo(data.video);
       data.bairro = canonicalBairro(data.bairro, regioes);
       data.slug = path.basename(file, ".json");
       return data;

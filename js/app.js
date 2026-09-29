@@ -6,6 +6,7 @@
   const chipsWrap = document.getElementById("property-chips");
   const modal = document.getElementById("property-modal");
   const modalImage = document.getElementById("modal-image");
+  const modalVideo = document.getElementById("modal-video");
   const modalTipo = document.getElementById("modal-tipo");
   const modalTitle = document.getElementById("modal-title");
   const modalMeta = document.getElementById("modal-meta");
@@ -243,14 +244,64 @@
     return properties.find((item) => item.slug === key || item.titulo === key);
   }
 
+  function videoOf(property) {
+    if (!property) return "";
+    const raw = property.video;
+    if (!raw) return "";
+    if (typeof raw === "object") {
+      return String(raw.url || raw.secure_url || raw.path || raw.video || "").trim();
+    }
+    const value = String(raw).trim();
+    if (!value) return "";
+    if (/^https?:\/\//i.test(value)) return value;
+    const file = value.replace(/^\/+/, "");
+    return `https://res.cloudinary.com/naury/video/upload/f_auto,q_auto/${file}`;
+  }
+
+  function mediaOf(property) {
+    const items = [];
+    const video = videoOf(property);
+    if (video) items.push({ type: "video", src: video });
+    photosOf(property).forEach((src) => items.push({ type: "image", src }));
+    return items;
+  }
+
+  function stopModalVideo() {
+    if (!modalVideo) return;
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+    modalVideo.load();
+    modalVideo.hidden = true;
+  }
+
   function showPhoto() {
     if (!activeProperty) return;
-    const fotos = photosOf(activeProperty);
-    modalImage.src = fotos[photoIndex] || "";
-    modalImage.alt = activeProperty.titulo || "";
-    const many = fotos.length > 1;
+    const media = mediaOf(activeProperty);
+    const current = media[photoIndex];
+    if (!current) {
+      stopModalVideo();
+      modalImage.removeAttribute("src");
+      modalImage.hidden = true;
+      galleryPrev.hidden = true;
+      galleryNext.hidden = true;
+      return;
+    }
+    const many = media.length > 1;
     galleryPrev.hidden = !many;
     galleryNext.hidden = !many;
+    if (current.type === "video") {
+      modalImage.hidden = true;
+      modalImage.removeAttribute("src");
+      modalVideo.hidden = false;
+      if (modalVideo.getAttribute("src") !== current.src) {
+        modalVideo.src = current.src;
+      }
+      return;
+    }
+    stopModalVideo();
+    modalImage.hidden = false;
+    modalImage.src = current.src;
+    modalImage.alt = activeProperty.titulo || "";
   }
 
   function openModal(property) {
@@ -268,6 +319,7 @@
   }
 
   function closeModal() {
+    stopModalVideo();
     modal.hidden = true;
     activeProperty = null;
     document.body.style.overflow = "";
@@ -355,16 +407,16 @@
   });
 
   galleryPrev.addEventListener("click", () => {
-    const fotos = photosOf(activeProperty);
-    if (!fotos.length) return;
-    photoIndex = (photoIndex - 1 + fotos.length) % fotos.length;
+    const media = mediaOf(activeProperty);
+    if (!media.length) return;
+    photoIndex = (photoIndex - 1 + media.length) % media.length;
     showPhoto();
   });
 
   galleryNext.addEventListener("click", () => {
-    const fotos = photosOf(activeProperty);
-    if (!fotos.length) return;
-    photoIndex = (photoIndex + 1) % fotos.length;
+    const media = mediaOf(activeProperty);
+    if (!media.length) return;
+    photoIndex = (photoIndex + 1) % media.length;
     showPhoto();
   });
 
