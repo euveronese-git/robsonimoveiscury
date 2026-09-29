@@ -13,7 +13,7 @@ public_folder: /images/uploads
 media_library:
   name: cloudinary
   config:
-    cloud_name: naury
+    cloud_name: qodjrluz
     api_key: "823687155364381"
 
 collections:

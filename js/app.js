@@ -255,7 +255,7 @@
     if (!value) return "";
     if (/^https?:\/\//i.test(value)) return value;
     const file = value.replace(/^\/+/, "");
-    return `https://res.cloudinary.com/naury/video/upload/f_auto,q_auto/${file}`;
+    return `https://res.cloudinary.com/qodjrluz/video/upload/f_auto,q_auto/${file}`;
   }
 
   function mediaOf(property) {
