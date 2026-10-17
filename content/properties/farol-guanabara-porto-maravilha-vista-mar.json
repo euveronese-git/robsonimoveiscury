@@ -21,7 +21,8 @@
     "/images/uploads/mercadinho.png",
     "/images/uploads/lavanderia.png",
     "/images/uploads/pet-place.png",
-    "/images/uploads/playgroud.png"
+    "/images/uploads/playgroud.png",
+    "https://res.cloudinary.com/qodjrluz/image/upload/v1786663620/sample.jpg"
   ],
   "tipo": "Lançamento",
   "titulo": "FAROL GUANABARA - PORTO MARAVILHA - VISTA MAR"
